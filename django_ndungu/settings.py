@@ -12,20 +12,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+from .local_settings import BASE_DIR, SECRET_KEY, DEBUG, ALLOWED_HOSTS, DATABASES, ADMINS
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h@e#&&wu_zs60d8pym43@m2zk!qcgi+98n4r%^8v*c31gi__bt'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -69,17 +60,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_ndungu.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
