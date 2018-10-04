@@ -1,0 +1,9 @@
+<html>
+<p>Hello {{ username }}, here's a list of allocations!</p>
+{% for i in allocation_list %}
+    <h1><a href="{{ i.get_absolute_url }}">Allocation {{ i.serial_number }}</a></h1>
+    <p>Municipality: {{ i.municipality }}</p>
+    <p>Intended Use: {{ i.intended_use }}</p>
+    <p>Current Use: {{ i.current_use }}</p>
+{% endfor %}
+</html>
