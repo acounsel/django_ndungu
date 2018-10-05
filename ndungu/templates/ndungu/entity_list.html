@@ -1,0 +1,6 @@
+<html>
+<p>Hello {{ username }}, here's a list of entities!</p>
+{% for i in entity_list %}
+    <p><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></p>
+{% endfor %}
+</html>

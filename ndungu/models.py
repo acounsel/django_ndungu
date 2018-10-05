@@ -24,6 +24,9 @@ class Municipality(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('municipality-detail', kwargs={'pk': self.id})
+
 class Authority(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
@@ -33,6 +36,9 @@ class Authority(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('authority-detail', kwargs={'pk':self.id})
 
 class Entity(models.Model):
     ENTITY_CHOICES = (
@@ -51,6 +57,9 @@ class Entity(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('entity-detail', kwargs={'pk':self.id})
 
 class UseCase(models.Model):
     USE_CHOICES = (

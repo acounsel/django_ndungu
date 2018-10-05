@@ -4,6 +4,9 @@
 <ul>
     <li><a href="{% url 'allocation-list' %}">Allocations</a></li>
     <li><a href="{% url 'province-list' %}">Provinces</a></li>
+    <li><a href="{% url 'municipality-list'%}">Municipalities</a></li>
+    <li><a href="{% url 'authority-list'%}">Authorities</a></li> 
+    <li><a href="{% url 'entity-list'%}">Entities</a></li> 
 </ul>
 {% for i in allocation_list %}
     <h1><a href="{{ i.get_absolute_url }}">Allocation {{ i.serial_number }}</a></h1>
