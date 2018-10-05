@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {{ province }}
-  <h1>Hello {{ username }}, here is more information about {{ province.name }}</h1>
   <h2>Municipalities:</h2>
   {% for municipality in province.municipality_set.all %}
   <p>{{ municipality }}</p>

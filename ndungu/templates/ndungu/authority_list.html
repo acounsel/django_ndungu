@@ -1,0 +1,6 @@
+<html>
+<p>Hello {{ username }}, here's a list of authorities!</p>
+{% for i in authority_list %}
+    <p><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></p>
+{% endfor %}
+</html>
