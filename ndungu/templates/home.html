@@ -1,14 +1,17 @@
-<html>
-<p>Hello {{ username }}</p>
-<p>Browse by the following categories:</p>
-<ul>
+{% extends 'base.html' %}
+
+{% block content %}
+  <p>Hello {{ username }}</p>
+  <p>Browse by the following categories:</p>
+  <ul>
     <li><a href="{% url 'allocation-list' %}">Allocations</a></li>
     <li><a href="{% url 'province-list' %}">Provinces</a></li>
-</ul>
-{% for i in allocation_list %}
+  </ul>
+  {% for i in allocation_list %}
     <h1><a href="{{ i.get_absolute_url }}">Allocation {{ i.serial_number }}</a></h1>
     <p>Municipality: {{ i.municipality }}</p>
     <p>Intended Use: {{ i.intended_use }}</p>
     <p>Current Use: {{ i.current_use }}</p>
-{% endfor %}
-</html>
+  {% endfor %}
+{% endblock %}
+

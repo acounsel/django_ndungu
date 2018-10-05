@@ -1,0 +1,30 @@
+h1 {
+  color: #FFFFFF;
+}
+h2 {
+  font-size:20px;
+  color:lightblue;
+}
+body {
+  padding:30px;
+  background-size: cover;
+}
+.Main {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.Content-wrapper {
+  margin-top:20px;
+  background-color: #fafafa;
+  border-radius: 15px;
+  opacity: 0.7;
+}
+.Content {
+  padding: 30px;
+}
+.HomeSubtitle {
+  padding-bottom:30px;
+}
+.navbar {
+  border-radius: 15px 15px 0 0;
+}

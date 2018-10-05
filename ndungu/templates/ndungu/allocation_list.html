@@ -1,9 +1,48 @@
-<html>
-<p>Hello {{ username }}, here's a list of allocations!</p>
-{% for i in allocation_list %}
-    <h1><a href="{{ i.get_absolute_url }}">Allocation {{ i.serial_number }}</a></h1>
-    <p>Municipality: {{ i.municipality }}</p>
-    <p>Intended Use: {{ i.intended_use }}</p>
-    <p>Current Use: {{ i.current_use }}</p>
-{% endfor %}
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+  <p>Hello {{ username }}, here's a list of allocations!</p>
+  <table class="Table-default table">
+    <thead>
+      <tr>
+        <th>
+          Serial Number
+        </th>
+        <th>
+          Municipality
+        </th>
+        <th>
+          Intended Use
+        </th>
+        <th>
+          Current Use
+        </th>
+        <th>
+          Allocating Authority
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for allocation in allocation_list %}
+      <tr>
+        <td>
+          <a href="{{ allocation.get_absolute_url }}">{{ allocation.serial_number }}</a>
+        </td>
+        <td>
+          {{ allocation.municipality }}
+        </td>
+        <td>
+          {{ allocation.intended_use }}
+        </td>
+        <td>
+          {{ allocation.current_use }}
+        </td>
+        <td>
+          {{ allocation.allocating_authority }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

@@ -1,15 +1,17 @@
-<html>
-{{ province }}
-<h1>Hello {{ username }}, here is more information about {{ province.name }}</h1>
-<h2>Municipalities:</h2>
-{% for municipality in province.municipality_set.all %}
-<p>{{ municipality }}</p>
-{% endfor %}
-<h2>Here are the allocations in this province:</h2>
-{% for i in allocation_list %}
+{% extends 'base.html' %}
+
+{% block content %}
+  {{ province }}
+  <h1>Hello {{ username }}, here is more information about {{ province.name }}</h1>
+  <h2>Municipalities:</h2>
+  {% for municipality in province.municipality_set.all %}
+  <p>{{ municipality }}</p>
+  {% endfor %}
+  <h2>Here are the allocations in this province:</h2>
+  {% for i in allocation_list %}
     <h1><a href="{{ i.get_absolute_url }}">Allocation {{ i.serial_number }}</a></h1>
     <p>Municipality: {{ i.municipality }}</p>
     <p>Intended Use: {{ i.intended_use }}</p>
     <p>Current Use: {{ i.current_use }}</p>
-{% endfor %}
-</html>
+  {% endfor %}
+{% endblock %}
