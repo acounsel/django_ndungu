@@ -3,4 +3,5 @@ local_settings.py
 db.sqlite3
 .DS_Store
 venv
-ndungu/migrations/
+ndungu/migrations/*
+!ndungu/migrations/__init__.py
