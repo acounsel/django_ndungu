@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Hello {{ username }}, here's more information about allocation {{ allocation.serial_number }}</h1>
+  <p>Hello {{ username }}, here's more information about allocation {{ allocation.serial_number }}</p>
   <p>Municipality: {{ allocation.municipality }}</p>
   <p>Current Owner Type: {{ allocation.current_owner.entity_type }}</p>
 {% endblock %}
